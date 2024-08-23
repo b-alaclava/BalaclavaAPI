@@ -8,6 +8,7 @@ repositories {
     maven {
         url = 'https://repo.runelite.net'
     }
+
     mavenCentral()
     jcenter()
 }
@@ -40,12 +41,32 @@ version = '1.0'
 sourceCompatibility = "11"
 targetCompatibility = "11"
 
-task FatJar(type: Jar) {
-    baseName = 'BalaclavaAPI'
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'com.example.Main'
+    }
+    archiveBaseName.set('BalaclavaAPI')
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact fatJar
+            groupId = 'com.example'
+            artifactId = 'BalaclavaAPI'
+            version = '1.0'
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 targetCompatibility = JavaVersion.VERSION_11
