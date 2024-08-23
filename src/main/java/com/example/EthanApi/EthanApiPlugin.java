@@ -29,22 +29,13 @@ import static net.runelite.api.Varbits.QUICK_PRAYER;
 
 public class EthanApiPlugin{
 
-    static{
-        EventBus eventBus = RuneLite.getInjector().getInstance(EventBus.class);
-        eventBus.register(RuneLite.getInjector().getInstance(Inventory.class));
-        eventBus.register(RuneLite.getInjector().getInstance(Bank.class));
-        eventBus.register(RuneLite.getInjector().getInstance(BankInventory.class));
-        eventBus.register(RuneLite.getInjector().getInstance(NPCs.class));
-        eventBus.register(RuneLite.getInjector().getInstance(TileObjects.class));
-        eventBus.register(RuneLite.getInjector().getInstance(Players.class));
-        eventBus.register(RuneLite.getInjector().getInstance(Equipment.class));
-        eventBus.register(RuneLite.getInjector().getInstance(DepositBox.class));
-        eventBus.register(RuneLite.getInjector().getInstance(ShopInventory.class));
-        eventBus.register(RuneLite.getInjector().getInstance(Shop.class));
-        eventBus.register(RuneLite.getInjector().getInstance(DoAction.class));
-    }
+    static boolean initialized = false;
 
-    public static void register(){
+    public static void init(){
+
+        if (initialized) {
+            return;
+        }
         EventBus eventBus = RuneLite.getInjector().getInstance(EventBus.class);
         eventBus.register(RuneLite.getInjector().getInstance(Inventory.class));
         eventBus.register(RuneLite.getInjector().getInstance(Bank.class));
@@ -57,6 +48,7 @@ public class EthanApiPlugin{
         eventBus.register(RuneLite.getInjector().getInstance(ShopInventory.class));
         eventBus.register(RuneLite.getInjector().getInstance(Shop.class));
         eventBus.register(RuneLite.getInjector().getInstance(DoAction.class));
+        initialized = true;
     }
 
     static ClientUI clientUI = RuneLite.getInjector().getInstance(ClientUI.class);
