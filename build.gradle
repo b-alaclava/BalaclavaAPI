@@ -54,14 +54,17 @@ task fatJar(type: Jar) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact fatJar
-            groupId = 'com.example'
-            artifactId = 'BalaclavaAPI'
-            version = '1.0'
+            from components.java
         }
     }
     repositories {
-        mavenLocal()
+        maven {
+            credentials {
+                username 'admin'
+                password 'password'
+            }
+            url "http://baseUrl/artifactory/libs-release-local"
+        }
     }
 }
 
