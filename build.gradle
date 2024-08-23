@@ -35,15 +35,12 @@ sourceSets {
     }
 }
 
-group = 'com.balaclava'
+group = 'com.example'
 version = '1.0'
 sourceCompatibility = "11"
 targetCompatibility = "11"
 
 task FatJar(type: Jar) {
-    manifest {
-        attributes 'Main-Class': 'com.balaclava.Main'
-    }
     baseName = 'BalaclavaAPI'
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
@@ -51,8 +48,4 @@ task FatJar(type: Jar) {
 }
 
 
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
 targetCompatibility = JavaVersion.VERSION_11
