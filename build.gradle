@@ -23,7 +23,6 @@ dependencies {
     testImplementation group: 'net.runelite', name: 'jshell', version: runeLiteVersion
     implementation 'org.json:json:20230227'
     implementation 'org.roaringbitmap:RoaringBitmap:0.9.44'
-    implementation("com.google.archivepatcher:archive-patch-applier:1.0.4")
     implementation("org.benf:cfr:0.152")
 }
 sourceSets {
@@ -37,7 +36,7 @@ sourceSets {
 }
 
 group = 'com.example'
-version = '5.4'
+version = '1.0'
 sourceCompatibility = "11"
 targetCompatibility = "11"
 
@@ -45,40 +44,13 @@ task FatJar(type: Jar) {
     manifest {
         attributes 'Main-Class': 'com.example.Main'
     }
-    baseName = 'EthanVannPlugins'
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
-    exclude("com/example/hidden")
-    exclude("com/example/PathingTesting")
-    with jar
-}
-
-task FatJarWithHidden(type: Jar) {
-    manifest {
-        attributes 'Main-Class': 'com.example.Main'
-    }
-    baseName = 'EthanVannPlugins'
+    baseName = 'BalaclavaAPI'
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            credentials {
-                username 'admin'
-                password 'password'
-            }
-            url "http://baseUrl/artifactory/libs-release-local"
-        }
-    }
-}
+
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'

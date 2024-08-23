@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3081dcfe-d1a1-4fe8-be0b-15f61c6817e7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/CSuperheat/Bar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/CSuperheat/CSuperheatConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/CSuperheat/CSuperheatPlugin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/CSuperheat/ItemWithAmount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/Bank.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/BankInventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/BankItemWidget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/DepositBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/ETileItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/Equipment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/EquipmentItemWidget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/Inventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/NPCs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/Players.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/Shop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/ShopInventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/TileItems.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/TileObjects.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$AchievementDiary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$AdventureLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$AncientSpellBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$ArceuusSpellBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Bank.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$BankPin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$BarbarianAssault$ATK.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$BarbarianAssault$HLR.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$BarbarianAssault.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Barrows.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Barrows_Puzzle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$ChambersOfXericStorageUnitPrivate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Chatbox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Clan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$ClanGuest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Cluescroll.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$CollectionLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Combat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DepositBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DestroyItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DialogNPC.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DialogNotification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DialogOption.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DialogPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DialogSprite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DialogSprite2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Diary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DuelConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$DuelResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Emotes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Equipment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$EquipmentWidgetIdentifiers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$ExperienceTracker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$ExplorersRing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$FairyRing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$FairyRingCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$FairyRingPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$FixedViewport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$FossilMushroomTeleport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$FriendList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$FriendsChat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$GauntletMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$GauntletTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$GenericScroll.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$GrandExchange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$GrandExchangeInventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$GroupStorage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$GuidePrices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$HallowedSepulchreTimer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Health.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$IgnoreList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$JewelBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$KillLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$KourendFavour.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$LevelUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$LightBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Lms.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$LmsKDA.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$LoginClickToPlayScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$LogoutPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$LootingBag.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$LunarSpellBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$MinigameDialog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Minigames.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Minimap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Music.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Options.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$PestControl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$PestControlExchangeWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Prayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$PuzzleBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Pvp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$QuestCompleted.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$QuestList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$QuestTab.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$QuickPrayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Raids.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$ResizableViewport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$ResizableViewportBottomLine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$SeedVault.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Settings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$SettingsSide.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Shop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Skills.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Skotizo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$SlayerRewards.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Smithing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$SpellBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$StandardSpellBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$TemporossStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$TheatreOfBlood.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$TheatreOfBloodParty.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Tob.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Trade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$TradeScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$TrailblazerAreas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$VarrockMuseum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$VolcanicMine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$WorldMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$WorldSwitcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID$Zeah.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetID.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/WidgetInfoExtended.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/Widgets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/query/EquipmentItemQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/query/ItemQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/query/NPCQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/query/PlayerQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/query/QuickPrayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/query/TileItemQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/query/TileObjectQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Collections/query/WidgetQuery.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/EthanApiPlugin$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/EthanApiPlugin$PathResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/EthanApiPlugin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/PathFinding/GlobalCollisionMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/PathFinding/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Utility/WorldAreaUtility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/EthanApi/Utility/WorldPointUtility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/ExamplePluginTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/ClickNpc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/ClickObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/ClickWidget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/Utility/DoAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/Utility/Tiles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/Utility/coords/Area.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/Utility/coords/PolygonalArea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/Utility/coords/RectangularArea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/Utility/coords/RegionPoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/Utility/coords/SceneArea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/Utility/coords/ScenePoint.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/balaclava/InteractionApi/Walk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/balaclava/ExamplePluginTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/BalaclavaSuperHeat.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/com/balaclava/EthanApi/PathFinding/map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/FatJar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="example" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="example" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="example" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2l1WhraB83x9GRzGApBJlYOCOJ7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/matthew/Balaclava/BalaclavaAPI"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/balaclava/EthanApi" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/balaclava" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.BalaclavaAPI [FatJar]">
+    <configuration name="ExamplePluginTest" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.balaclava.ExamplePluginTest" />
+      <module name="example.test" />
+      <option name="PROGRAM_PARAMETERS" value="--developer-mode" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.balaclava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BalaclavaAPI [FatJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="FatJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.BalaclavaAPI [FatJar]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3081dcfe-d1a1-4fe8-be0b-15f61c6817e7" name="Changes" comment="" />
+      <created>1724348185442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1724348185442</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
