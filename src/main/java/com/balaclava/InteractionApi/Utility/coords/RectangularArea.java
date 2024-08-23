@@ -19,7 +19,6 @@ public class RectangularArea implements Area
 	@Getter
 	private final int plane;
 
-	Random random = new Random();
 
 	public RectangularArea(int x1, int y1, int x2, int y2, int plane)
 	{
@@ -66,7 +65,13 @@ public class RectangularArea implements Area
 	@Override
 	public WorldPoint getRandomTile()
 	{
-		return new WorldPoint(random.nextInt(minX, maxX), random.nextInt(minY, maxY), plane);
+		Random random = new Random();
+		int randomNumberX = random.nextInt((maxX - minX) + 1) + minX;
+		int randomNumberY = random.nextInt((maxY - minY) + 1) + minY;
+
+
+
+		return new WorldPoint(randomNumberX, random.nextInt(randomNumberY), plane);
 	}
 
 	public WorldPoint getCenter()

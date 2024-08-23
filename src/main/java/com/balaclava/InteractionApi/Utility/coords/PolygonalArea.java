@@ -41,8 +41,9 @@ public class PolygonalArea implements Area
 		do
 		{
 			Random random = new Random();
-			x = random.nextInt(r.x, r.x + r.width);
-			y = random.nextInt(r.y, r.y + r.height);
+			 x = random.nextInt((r.x + r.width - r.x) + 1) + r.x;
+			 y = random.nextInt((r.y + r.height - r.y) + 1) + r.y;
+
 		} while (!polygon.contains(x, y));
 		return new WorldPoint(x, y, plane);
 	}
