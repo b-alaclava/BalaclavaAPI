@@ -1,7 +1,7 @@
 package com.example.EthanApi.Collections.query;
 
 import com.example.EthanApi.Collections.Players;
-import com.example.EthanApi.EthanApiPlugin;
+import com.example.EthanApi.EthanApi;
 import com.example.EthanApi.Utility.WorldAreaUtility;
 import net.runelite.api.Actor;
 import net.runelite.api.Client;
@@ -132,7 +132,7 @@ public class NPCQuery {
     }
 
     public NPCQuery walkable() {
-        npcs = npcs.stream().filter(npc -> EthanApiPlugin.canPathToTile(npc.getWorldLocation()).isReachable()).collect(Collectors.toList());
+        npcs = npcs.stream().filter(npc -> EthanApi.canPathToTile(npc.getWorldLocation()).isReachable()).collect(Collectors.toList());
         return this;
     }
 
@@ -216,7 +216,7 @@ public class NPCQuery {
                 npcMap.put(wp, npc);
             }
         }
-        List<WorldPoint> path = EthanApiPlugin.pathToGoalSetFromPlayerNoCustomTiles(new HashSet<>(npcMap.keySet()));
+        List<WorldPoint> path = EthanApi.pathToGoalSetFromPlayerNoCustomTiles(new HashSet<>(npcMap.keySet()));
         if (path == null) {
             return Optional.empty();
         }

@@ -1,6 +1,6 @@
 package com.example.EthanApi.PathFinding;
 
-import com.example.EthanApi.EthanApiPlugin;
+import com.example.EthanApi.EthanApi;
 import net.runelite.api.coords.WorldPoint;
 import org.roaringbitmap.RoaringBitmap;
 
@@ -64,7 +64,7 @@ public class GlobalCollisionMap {
 
     public static List<WorldPoint> findPath(WorldPoint p) {
         long start = System.currentTimeMillis();
-        WorldPoint starting = EthanApiPlugin.getClient().getLocalPlayer().getWorldLocation();
+        WorldPoint starting = EthanApi.getClient().getLocalPlayer().getWorldLocation();
         HashSet<WorldPoint> visited = new HashSet<>();
         ArrayDeque<Node> queue = new ArrayDeque<Node>();
         queue.add(new Node(starting));

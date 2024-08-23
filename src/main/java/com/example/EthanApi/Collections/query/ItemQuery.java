@@ -1,6 +1,6 @@
 package com.example.EthanApi.Collections.query;
 
-import com.example.EthanApi.EthanApiPlugin;
+import com.example.EthanApi.EthanApi;
 import lombok.SneakyThrows;
 import net.runelite.api.Client;
 import net.runelite.api.ItemComposition;
@@ -142,13 +142,13 @@ public class ItemQuery {
 
     @SneakyThrows
     public boolean isNoted(Widget item) {
-        ItemComposition itemComposition = EthanApiPlugin.itemDefs.get(item.getItemId());
+        ItemComposition itemComposition = EthanApi.itemDefs.get(item.getItemId());
         return itemComposition.getNote() != -1;
     }
 
     @SneakyThrows
     public boolean isStackable(Widget item) {
-        ItemComposition itemComposition = EthanApiPlugin.itemDefs.get(item.getItemId());
+        ItemComposition itemComposition = EthanApi.itemDefs.get(item.getItemId());
         return itemComposition.isStackable();
     }
 }

@@ -1,6 +1,6 @@
 package com.example.EthanApi.Collections;
 
-import com.example.EthanApi.EthanApiPlugin;
+import com.example.EthanApi.EthanApi;
 import net.runelite.api.FontTypeFace;
 import net.runelite.api.Point;
 import net.runelite.api.widgets.Widget;
@@ -437,7 +437,7 @@ public class BankItemWidget implements Widget {
     public String[] getActions() {
         String[] actions = new String[10];
         //0
-        switch (EthanApiPlugin.getClient().getVarbitValue(6590)) {
+        switch (EthanApi.getClient().getVarbitValue(6590)) {
             case 0:
                 actions[0] = "Withdraw-1";
                 break;
@@ -448,7 +448,7 @@ public class BankItemWidget implements Widget {
                 actions[0] = "Withdraw-10";
                 break;
             case 3:
-                actions[0] = "Withdraw-" + EthanApiPlugin.getClient().getVarbitValue(3960);
+                actions[0] = "Withdraw-" + EthanApi.getClient().getVarbitValue(3960);
                 break;
             case 4:
                 actions[0] = "Withdraw-All";
@@ -456,7 +456,7 @@ public class BankItemWidget implements Widget {
         }
 
         //1
-        if (EthanApiPlugin.getClient().getVarbitValue(6590) != 0) {
+        if (EthanApi.getClient().getVarbitValue(6590) != 0) {
             actions[1] = "Withdraw-1";
         }
 
@@ -465,8 +465,8 @@ public class BankItemWidget implements Widget {
         actions[3] = "Withdraw-10";
 
         //4
-        if (EthanApiPlugin.getClient().getVarbitValue(3960) > 0) {
-            actions[4] = "Withdraw-" + EthanApiPlugin.getClient().getVarbitValue(3960);
+        if (EthanApi.getClient().getVarbitValue(3960) > 0) {
+            actions[4] = "Withdraw-" + EthanApi.getClient().getVarbitValue(3960);
         }
 
         //5-7
@@ -475,7 +475,7 @@ public class BankItemWidget implements Widget {
         actions[7] = "Withdraw-All-but-1";
 
         //8
-        if (EthanApiPlugin.getClient().getVarbitValue(3755) == 0) {
+        if (EthanApi.getClient().getVarbitValue(3755) == 0) {
             actions[8] = "Placeholder";
         }
         //9

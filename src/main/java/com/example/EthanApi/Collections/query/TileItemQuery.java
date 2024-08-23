@@ -1,7 +1,7 @@
 package com.example.EthanApi.Collections.query;
 
 import com.example.EthanApi.Collections.ETileItem;
-import com.example.EthanApi.EthanApiPlugin;
+import com.example.EthanApi.EthanApi;
 import lombok.SneakyThrows;
 import net.runelite.api.Client;
 import net.runelite.api.ItemComposition;
@@ -35,7 +35,7 @@ public class TileItemQuery {
         tileItems = tileItems.stream().filter(tileItem ->
         {
             try {
-                return EthanApiPlugin.itemDefs.get(tileItem.tileItem.getId()).getName().equals(name);
+                return EthanApi.itemDefs.get(tileItem.tileItem.getId()).getName().equals(name);
             } catch (ExecutionException e) {
                 throw new RuntimeException(e);
             }
@@ -47,7 +47,7 @@ public class TileItemQuery {
         tileItems = tileItems.stream().filter(tileItem ->
         {
             try {
-                return EthanApiPlugin.itemDefs.get(tileItem.tileItem.getId()).getName().contains(name);
+                return EthanApi.itemDefs.get(tileItem.tileItem.getId()).getName().contains(name);
             } catch (ExecutionException e) {
                 throw new RuntimeException(e);
             }
@@ -77,7 +77,7 @@ public class TileItemQuery {
                         {
                             try {
                                 return WildcardMatcher.matches(input.toLowerCase(),
-                                        Text.removeTags(EthanApiPlugin.itemDefs.get(item.tileItem.getId()).getName().toLowerCase()));
+                                        Text.removeTags(EthanApi.itemDefs.get(item.tileItem.getId()).getName().toLowerCase()));
                             } catch (ExecutionException e) {
                                 throw new RuntimeException(e);
                             }
@@ -104,7 +104,7 @@ public class TileItemQuery {
                         {
                             try {
                                 return !WildcardMatcher.matches(input.toLowerCase(),
-                                        Text.removeTags(EthanApiPlugin.itemDefs.get(item.tileItem.getId()).getName().toLowerCase()));
+                                        Text.removeTags(EthanApi.itemDefs.get(item.tileItem.getId()).getName().toLowerCase()));
                             } catch (ExecutionException e) {
                                 throw new RuntimeException(e);
                             }
@@ -121,7 +121,7 @@ public class TileItemQuery {
                     {
                         try {
                             return WildcardMatcher.matches(s.toLowerCase(),
-                                    Text.removeTags(EthanApiPlugin.itemDefs.get(item.tileItem.getId()).getName().toLowerCase()));
+                                    Text.removeTags(EthanApi.itemDefs.get(item.tileItem.getId()).getName().toLowerCase()));
                         } catch (ExecutionException e) {
                             throw new RuntimeException(e);
                         }
@@ -140,7 +140,7 @@ public class TileItemQuery {
                     {
                         try {
                             return WildcardMatcher.matches(s.toLowerCase(),
-                                    Text.removeTags(EthanApiPlugin.itemDefs.get(item.tileItem.getId()).getName().toLowerCase()));
+                                    Text.removeTags(EthanApi.itemDefs.get(item.tileItem.getId()).getName().toLowerCase()));
                         } catch (ExecutionException e) {
                             throw new RuntimeException(e);
                         }
@@ -194,7 +194,7 @@ public class TileItemQuery {
 
     @SneakyThrows
     public boolean isNoted(ETileItem item) {
-        ItemComposition itemComposition = EthanApiPlugin.itemDefs.get(item.tileItem.getId());
+        ItemComposition itemComposition = EthanApi.itemDefs.get(item.tileItem.getId());
         return itemComposition.getNote() != -1;
     }
 
@@ -209,7 +209,7 @@ public class TileItemQuery {
             map.put(t.getLocation(), t);
             tiles.add(t.getLocation());
         }
-        List<WorldPoint> path = EthanApiPlugin.pathToGoalSetFromPlayerNoCustomTiles(new HashSet<>(tiles));
+        List<WorldPoint> path = EthanApi.pathToGoalSetFromPlayerNoCustomTiles(new HashSet<>(tiles));
         if (path == null || path.isEmpty()) {
             return Optional.empty();
         }

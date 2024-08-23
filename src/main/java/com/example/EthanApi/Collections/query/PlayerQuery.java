@@ -1,6 +1,6 @@
 package com.example.EthanApi.Collections.query;
 
-import com.example.EthanApi.EthanApiPlugin;
+import com.example.EthanApi.EthanApi;
 import com.example.EthanApi.Utility.WorldAreaUtility;
 import net.runelite.api.Actor;
 import net.runelite.api.Client;
@@ -115,7 +115,7 @@ public class PlayerQuery {
                 playerMap.put(wp, player);
             }
         }
-        List<WorldPoint> path = EthanApiPlugin.pathToGoalSetFromPlayerNoCustomTiles(new HashSet<>(playerMap.keySet()));
+        List<WorldPoint> path = EthanApi.pathToGoalSetFromPlayerNoCustomTiles(new HashSet<>(playerMap.keySet()));
         if (path == null) {
             return Optional.empty();
         }

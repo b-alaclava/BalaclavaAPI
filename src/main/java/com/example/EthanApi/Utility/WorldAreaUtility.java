@@ -1,6 +1,6 @@
 package com.example.EthanApi.Utility;
 
-import com.example.EthanApi.EthanApiPlugin;
+import com.example.EthanApi.EthanApi;
 import net.runelite.api.*;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldArea;
@@ -24,7 +24,7 @@ public class WorldAreaUtility {
             p = new Point(e.getLocalLocation().getSceneX(), e.getLocalLocation().getSceneY());
         }
         LocalPoint objectMinLocation = new LocalPoint(p.getX(), p.getY());
-        WorldPoint objectMinWorldPoint = WorldPoint.fromScene(EthanApiPlugin.getClient(), objectMinLocation.getX(), objectMinLocation.getY(), e.getPlane());
+        WorldPoint objectMinWorldPoint = WorldPoint.fromScene(EthanApi.getClient(), objectMinLocation.getX(), objectMinLocation.getY(), e.getPlane());
         int xSW = objectMinWorldPoint.getX();
         int ySW = objectMinWorldPoint.getY();
         int xNE = xSW + width - 1;
@@ -43,18 +43,18 @@ public class WorldAreaUtility {
                 surroundingTiles.add(new WorldPoint(x, y, objectMinWorldPoint.getPlane()));
             }
         }
-        CollisionData[] collisionData = EthanApiPlugin.getClient().getCollisionMaps();
+        CollisionData[] collisionData = EthanApi.getClient().getCollisionMaps();
         if (collisionData == null) {
             return surroundingTiles;
         }
 
-        int[][] planeData = collisionData[EthanApiPlugin.getClient().getPlane()].getFlags();
+        int[][] planeData = collisionData[EthanApi.getClient().getPlane()].getFlags();
 
         var iter = surroundingTiles.iterator();
 
         while (iter.hasNext()) {
             WorldPoint testPoint = iter.next();
-            LocalPoint localScenePoint = LocalPoint.fromWorld(EthanApiPlugin.getClient(), testPoint);
+            LocalPoint localScenePoint = LocalPoint.fromWorld(EthanApi.getClient(), testPoint);
             if (localScenePoint == null) {
                 continue;
             }
@@ -86,16 +86,16 @@ public class WorldAreaUtility {
         grownArea.remove(0);
         grownArea.removeAll(objectArea);
 
-        CollisionData[] collisionData = EthanApiPlugin.getClient().getCollisionMaps();
+        CollisionData[] collisionData = EthanApi.getClient().getCollisionMaps();
         if (collisionData == null) {
             return grownArea;
         }
 
-        int[][] planeData = collisionData[EthanApiPlugin.getClient().getPlane()].getFlags();
+        int[][] planeData = collisionData[EthanApi.getClient().getPlane()].getFlags();
 
         for (int i = grownArea.size() - 1; i >= 0; i--) {
             WorldPoint testPoint = grownArea.get(i);
-            LocalPoint localScenePoint = LocalPoint.fromWorld(EthanApiPlugin.getClient(), testPoint);
+            LocalPoint localScenePoint = LocalPoint.fromWorld(EthanApi.getClient(), testPoint);
             if (localScenePoint == null) {
                 continue;
             }
