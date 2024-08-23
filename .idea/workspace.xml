@@ -10,68 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3081dcfe-d1a1-4fe8-be0b-15f61c6817e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/Bank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/BankItemWidget.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/BankItemWidget.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/ItemQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/ItemQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/NPCQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/NPCQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/PlayerQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/PlayerQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/TileItemQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/TileItemQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/TileObjectQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Collections/query/TileObjectQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/EthanApiPlugin$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/EthanApiPlugin$PathResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/EthanApiPlugin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/PathFinding/GlobalCollisionMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/PathFinding/GlobalCollisionMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Utility/WorldAreaUtility.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/EthanApi/Utility/WorldAreaUtility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/ExamplePluginTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/ExamplePluginTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/ClickNpc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/ClickObject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/ClickWidget.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/Utility/DoAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/Utility/Tiles.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/Utility/coords/Area.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/Utility/coords/PolygonalArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/Utility/coords/RectangularArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/Utility/coords/RegionPoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/Utility/coords/SceneArea.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/Utility/coords/ScenePoint.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/InteractionApi/Walk.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/BankItemWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/BankItemWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/ItemQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/ItemQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/NPCQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/NPCQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/PlayerQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/PlayerQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/TileItemQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/TileItemQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/TileObjectQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Collections/query/TileObjectQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/EthanApiPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/EthanApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/PathFinding/GlobalCollisionMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/PathFinding/GlobalCollisionMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Utility/WorldAreaUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/EthanApi/Utility/WorldAreaUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/ClickNpc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/ClickNpc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/ClickObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/ClickObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/ClickWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/ClickWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/Utility/DoAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/DoAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/Utility/Tiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/coords/Tiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/Utility/coords/Area.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/coords/Area.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/Utility/coords/PolygonalArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/coords/PolygonalArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/Utility/coords/RectangularArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/coords/RectangularArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/Utility/coords/RegionPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/coords/RegionPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/Utility/coords/SceneArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/coords/SceneArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/Utility/coords/ScenePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/coords/ScenePoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/InteractionApi/Walk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/Utility/Walk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/ExamplePluginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/ExamplePluginTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,17 +89,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/matthew/Balaclava/BalaclavaAPI/src/main/java/com/example/BalaclavaAPI/TestPlugin",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/matthew/Balaclava/BalaclavaAPI/src/main/java/com/example/BalaclavaAPI/TestPlugin&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/example/BalaclavaAPI/TestPlugin" />
@@ -165,7 +111,7 @@
       <recent name="com.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ExamplePluginTest">
+  <component name="RunManager" selected="Gradle.BalaclavaAPI [fatJar]">
     <configuration name="ExamplePluginTest" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
