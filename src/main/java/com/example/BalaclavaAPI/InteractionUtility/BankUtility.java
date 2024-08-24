@@ -30,7 +30,7 @@ public class BankUtility {
     }
 
     public static void openBank(){
-        if(isBankOpen()){
+        if(bankIsOpen()){
             return;
         }
 
@@ -61,11 +61,13 @@ public class BankUtility {
         }
     }
     public static void closeBank(){
-        if(!isBankOpen()){
+        if(!bankIsOpen()){
             return;
         }
         Optional<Widget> depositWidget = Widgets.search().withId(786434).first();
         depositWidget.ifPresent(widget -> ClickWidget.clickWidget(11,widget, MenuAction.CC_OP,1));
+        client.runScript(ScriptID.MESSAGE_LAYER_CLOSE, 1, 1, 0);
+
 
     }
 
@@ -91,7 +93,7 @@ public class BankUtility {
         }
         return false;
     }
-    public static boolean isBankOpen(){
+    public static boolean bankIsOpen(){
         Optional<Widget> b = Widgets.search().withId(BANK_CONTAINER_WIDGET).first();
         return b.isPresent() && !b.get().isHidden();
     }

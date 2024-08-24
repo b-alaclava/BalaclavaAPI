@@ -48,8 +48,8 @@ public class ClickObject {
         }
 
 
-        int clickX = -1;
-        int clickY = -1;
+        int clickX = 0;
+        int clickY = 0;
 
         if(object.getClickbox() != null) {
              clickX = (int) object.getClickbox().getBounds().getX();

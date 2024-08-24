@@ -50,6 +50,17 @@ public class SpellUtility {
         spellWidget.ifPresent(toCast -> ClickWidget.widgetOnWidget(toCast,inventoryItem.get()));
     }
 
+    public static void castOnInventoryItem(WidgetInfoExtended spell, int itemId){
+        Optional<Widget> spellWidget = Widgets.search().withParentId(14286851).withId(getSpellId(spell)).first();
+        Optional<Widget> inventoryItem = Inventory.search().withId(itemId).first();
+
+        if(inventoryItem.isEmpty()){
+            return;
+        }
+
+        spellWidget.ifPresent(toCast -> ClickWidget.widgetOnWidget(toCast,inventoryItem.get()));
+    }
+
 
 
     private static int getSpellId(WidgetInfoExtended spell){
@@ -59,6 +70,6 @@ public class SpellUtility {
         output = output.replace("_", " "); // Remove any remaining underscores
 
 
-        return Widgets.search().withParentId(14286851).nameContains(output.toLowerCase()).first().get().getId();
+        return Widgets.search().withParentId(14286851).nameMatchesWildCardNoCase(output.toLowerCase()).first().get().getId();
     }
 }

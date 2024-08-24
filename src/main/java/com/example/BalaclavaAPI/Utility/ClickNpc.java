@@ -46,8 +46,8 @@ public class ClickNpc {
             }
 
 
-        int clickX = -1;
-        int clickY = -1;
+        int clickX = 0;
+        int clickY = 0;
 
         if(targetNpc.getCanvasTilePoly().getBounds() != null) {
             clickX = (int) (int)targetNpc.getCanvasTilePoly().getBounds().getMinX();

@@ -100,8 +100,8 @@ public class ClickWidget {
         ClickWidget.clickWidget(widget.getIndex(),widget,MenuAction.WIDGET_TARGET,0);
 
 
-        int clickX = -1;
-        int clickY = -1;
+        int clickX = 0;
+        int clickY = 0;
 
         if(obj.getCanvasTilePoly().getBounds() != null) {
             clickX = (int) (int)obj.getCanvasTilePoly().getBounds().getMinX();

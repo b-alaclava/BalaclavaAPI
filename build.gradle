@@ -48,6 +48,7 @@ task fatJar(type: Jar) {
     archiveBaseName.set('BalaclavaAPI')
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude("com/example/BalaclavaAPI/TestPlugin/**")
     with jar
 }
 
