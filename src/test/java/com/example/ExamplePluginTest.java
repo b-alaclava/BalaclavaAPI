@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.BSuperheat.BSuperheatPlugin;
+import com.example.Plugins.BSuperheat.BSuperheatPlugin;
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
