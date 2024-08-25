@@ -41,8 +41,8 @@ public class Walk {
         int sceneX = walkPoint.getX() - client.getTopLevelWorldView().getBaseX();
         int sceneY = walkPoint.getY() - client.getTopLevelWorldView().getBaseY();
         Point canv = Perspective.localToCanvas(client, LocalPoint.fromScene(sceneX, sceneY,client.getTopLevelWorldView().getScene()), client.getTopLevelWorldView().getPlane());
-        int x = canv != null ? canv.getX() : -1;
-        int y = canv != null ? canv.getY() : -1;
+        int x = canv != null ? canv.getX() : 0;
+        int y = canv != null ? canv.getY() : 0;
 
         DoAction.action(x,
                 y,

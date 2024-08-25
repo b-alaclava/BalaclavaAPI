@@ -1,10 +1,7 @@
 package com.example.BalaclavaAPI.Utility;
 
 import com.example.BalaclavaAPI.Utility.DoAction;
-import net.runelite.api.MenuAction;
-import net.runelite.api.NPC;
-import net.runelite.api.Point;
-import net.runelite.api.TileObject;
+import net.runelite.api.*;
 import net.runelite.api.widgets.Widget;
 import net.runelite.client.util.Text;
 
@@ -108,8 +105,12 @@ public class ClickWidget {
             clickY = (int) (int)obj.getCanvasTilePoly().getBounds().getMinY();
         }
 
-        DoAction.action(0,0, MenuAction.WIDGET_TARGET_ON_GAME_OBJECT ,obj.getId(),-1,"<col=ff9040>"+ widget.getName() +"</col><col=ffffff> -> <col=ffff00>",clickX,clickY);
-
+        if (obj instanceof GameObject) {
+            GameObject g = (GameObject) obj;
+            DoAction.action(g.getSceneMinLocation().getX(), g.getSceneMinLocation().getY(), MenuAction.WIDGET_TARGET_ON_GAME_OBJECT, g.getId(), -1, "", clickX, clickY);
+        }else {
+            DoAction.action(obj.getLocalLocation().getSceneX(), obj.getLocalLocation().getSceneY(), MenuAction.WIDGET_TARGET_ON_GAME_OBJECT, obj.getId(), -1, "", clickX,clickY);
+        }
 
     }
 

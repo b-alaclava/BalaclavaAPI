@@ -93,36 +93,15 @@ public class EthanApi {
                         }
                     });
 
-
-    public static boolean loggedIn() {
-        return client.getGameState() == GameState.LOGGED_IN;
-    }
-
-    public static boolean inRegion(int regionID) {
-        List<Integer> mapRegions = Arrays.stream(client.getMapRegions()).boxed().collect(Collectors.toList());
-        return mapRegions.contains(regionID);
-    }
-
-    public static WorldPoint playerPosition() {
+    private static WorldPoint playerPosition() {
         return client.getLocalPlayer().getWorldLocation();
     }
 
-
-    public static boolean isQuickPrayerActive(QuickPrayer prayer) {
-        return (client.getVarbitValue(4102) & (int) Math.pow(2, prayer.getIndex())) == Math.pow(2, prayer.getIndex());
-    }
-
-    public static boolean isQuickPrayerEnabled() {
-        return client.getVarbitValue(QUICK_PRAYER) == 1;
-    }
-
-
-
     public static List<WorldPoint> sceneWorldPoints() {
         List<WorldPoint> allWorldPoints = new ArrayList<>();
-        Scene scene = client.getScene();
+        Scene scene = client.getTopLevelWorldView().getScene();
         Tile[][][] tiles = scene.getTiles();
-        int z = client.getPlane();
+        int z = client.getTopLevelWorldView().getPlane();
         for (int x = 0; x < 104; ++x) {
             for (int y = 0; y < 104; ++y) {
                 Tile tile = tiles[z][x][y];
@@ -179,10 +158,6 @@ public class EthanApi {
         }
         return finalPoints;
     }
-
-//    public static List<WorldPoint> reachableTiles() {
-//        return new ArrayList<>(Arrays.stream(client.getScene().getTiles()).flatMap(Arrays::stream).flatMap(Arrays::stream).filter(Objects::nonNull).filter(x -> canPathToTile(x.getWorldLocation()).isReachable()).map(Tile::getWorldLocation).filter(Objects::nonNull).collect(Collectors.toList()));
-//    }
 
     static boolean canMoveWest(int flag) {
         return (flag & CollisionDataFlag.BLOCK_MOVEMENT_WEST) != CollisionDataFlag.BLOCK_MOVEMENT_WEST;

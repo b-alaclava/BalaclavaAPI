@@ -1,7 +1,9 @@
 package com.example.BalaclavaAPI.TestPlugin;
 
 
+import com.example.BalaclavaAPI.Utility.ClickNpc;
 import com.example.BalaclavaAPI.Utility.DoAction;
+import com.example.EthanApi.Collections.NPCs;
 import com.example.EthanApi.Collections.Widgets;
 import com.example.EthanApi.EthanApi;
 import com.google.inject.Inject;
@@ -22,7 +24,7 @@ import java.awt.*;
 @PluginDescriptor(
         name = "<html><font color=\"#6DF030\">B.</font> Test</html>",
         description = "Testing api development",
-        tags = {"superheat","Cal"}
+        tags = {"superheat","Balaclava"}
 )
 @Slf4j
 public class TestPlugin extends Plugin {
@@ -59,6 +61,9 @@ public class TestPlugin extends Plugin {
 
     @Subscribe
     public void onGameTick(GameTick e){
+        NPCs.search().withId(6920).first().ifPresent(npc -> {
+            ClickNpc.npcAction(npc,"Talk-to");
+        });
 
     }
 

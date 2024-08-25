@@ -1,8 +1,9 @@
 package com.example.BalaclavaAPI.Utility;
 
-import net.runelite.api.Client;
-import net.runelite.api.MenuAction;
+import lombok.SneakyThrows;
+import net.runelite.api.*;
 import net.runelite.api.Point;
+import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.widgets.Widget;
 import net.runelite.client.RuneLite;
@@ -10,7 +11,11 @@ import net.runelite.client.eventbus.Subscribe;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Random;
+import java.util.Vector;
 
 public class DoAction {
     static boolean consume = false;
@@ -32,53 +37,86 @@ public class DoAction {
 
     public static void action(int p1, int p2, MenuAction menuAction, int id, int itemId, String target,int x,int y){
         click(x,y);
+
+        // good but sends red clicks to 0,0
         client.menuAction(p1,p2,menuAction,id,itemId,"Balaclava",target);
+
+        //doesn't send red clicks to 0,0 but is sketchy?
+//        invoke(p1,p2,menuAction.getId(),id,itemId,"Balaclava",target,x,y);
     }
-    private static void sendMouseEventClick(Point p) {
-        Client client = RuneLite.getInjector().getInstance(Client.class);
-        assert client.isClientThread();
-        if (client.isStretchedEnabled()) {
-            final Dimension stretched = client.getStretchedDimensions();
-            final Dimension real = client.getRealDimensions();
-            final double width = (stretched.width / real.getWidth());
-            final double height = (stretched.height / real.getHeight());
-            final Point point = new Point((int) (p.getX() * width), (int) (p.getY() * height));
-            mouseEvent(501, point);
-            mouseEvent(502, point);
-            mouseEvent(500, point);
-            return;
+
+    public static void invoke(int param0, int param1, int opcode, int identifier, int itemid, String option, String target, int x, int y) {
+            try {
+
+                Class<?> classWithMenuAction = client.getClass().getClassLoader().loadClass("pb");
+
+                Method menuAction = Arrays.stream(classWithMenuAction.getDeclaredMethods())
+                        .filter(method ->
+                                method.getName().equals("ll")
+                                        && method.getParameterCount() >= 10)
+                        .findAny()
+                        .orElse(null);
+
+                if (menuAction == null) {
+                    return;
+                }
+
+                // When invoking, static methods need null as the first parameter
+                menuAction.setAccessible(true);
+
+                // Determine the number of expected parameters
+                int expectedArguments = menuAction.getParameterCount();
+                System.out.println("Expected arguments: " + expectedArguments);
+
+                // Prepare array of arguments to pass to invoke
+                Object[] arguments = new Object[expectedArguments];
+                arguments[0] = param0;
+                arguments[1] = param1;
+                arguments[2] = opcode;
+                arguments[3] = identifier;
+                arguments[4] = itemid;
+                arguments[5] = -1;
+                arguments[6] = option;
+                arguments[7] = target;
+                arguments[8] = x;
+                arguments[9] = y;
+
+                if (expectedArguments > 10) {
+                    arguments[10] = (byte) -1259406248;
+                }
+
+                // Invoke the method with the prepared arguments
+                Object result = menuAction.invoke(null, arguments);
+
+
+                menuAction.setAccessible(false);
+            } catch (Exception e) {
+                System.out.println("Failed to invoke menu action.");
+            }
         }
-        mouseEvent(501, p);
-        mouseEvent(502, p);
-        mouseEvent(500, p);
-    }
-    private static void mouseEvent(int id, Point point) {
-        Client client = RuneLite.getInjector().getInstance(Client.class);
-        MouseEvent e = new MouseEvent(
-                client.getCanvas(), id,
-                System.currentTimeMillis(),
-                0, point.getX(), point.getY(),
-                1, false, 1
-        );
-        client.getCanvas().dispatchEvent(e);
+
+
+
+
+    private static void sendMouseEventClick(Point p) {
+        long time = System.currentTimeMillis();
+        Canvas canvas = client.getCanvas();
+        MouseEvent press = new MouseEvent(canvas, MouseEvent.MOUSE_PRESSED, time, 0, p.getX(), p.getY(), 1, false);
+        canvas.dispatchEvent(press);
+        MouseEvent release = new MouseEvent(canvas, MouseEvent.MOUSE_RELEASED, time, 0,p.getX(), p.getY(), 1, false);
+        canvas.dispatchEvent(release);
     }
 
 
     //---keyboard
     @Subscribe public void onMenuOptionClicked(MenuOptionClicked event){
-        if(printMenuActions) {
-            System.out.println("-----------------------------------");
-            System.out.println("Param0: " + event.getParam0());
-            System.out.println("Param1: " + event.getParam1());
-            System.out.println("opcode: " + event.getMenuAction() + " -> " + event.getMenuAction().getId());
-            System.out.println("Identifier: " + event.getId());
-            System.out.println("ItemId: " + event.getItemId());
-            System.out.println("MenuOption: " + event.getMenuOption());
-            System.out.println("MenuTarget: " + event.getMenuTarget());
-            System.out.println("-----------------------------------");
-        }
+
 
         consumeClicks(event);
+
+        if(printMenuActions && !event.isConsumed()) {
+            System.out.println(event);
+        }
     }
 
     public static void consumeClicks(MenuOptionClicked event){
@@ -110,4 +148,45 @@ public class DoAction {
 
 
     }
+    public static Point getClickPoint(NPC npc){
+
+
+        LocalPoint ll = npc.getLocalLocation();
+        Shape clickbox = Perspective.getClickbox(client, npc.getModel(), npc.getOrientation(),npc.getLocalLocation().getX(),npc.getLocalLocation().getY(),Perspective.getTileHeight(client, ll, npc.getWorldLocation().getPlane()));
+
+        if(clickbox == null || clickbox.getBounds() == null){
+            return new Point(0,0);
+        }
+
+        int clickX = (int) (int)clickbox.getBounds().getMinX();
+        int clickY = (int) (int)npc.getCanvasTilePoly().getBounds().getMinY();
+
+
+        int modifiedX = clickX + random.nextInt(clickbox.getBounds().width);
+        int modifiedY = clickY + random.nextInt(clickbox.getBounds().height);
+
+
+
+        return new Point(modifiedX,modifiedY);
+
+    }
+    public static Point getClickPoint(TileObject tileObject){
+        Shape clickBox = tileObject.getClickbox();
+        if(clickBox == null) {
+            return new Point(0,0);
+        }
+
+        int clickX = (int) clickBox.getBounds2D().getMinX();
+        int clickY = (int) clickBox.getBounds2D().getMinY();
+
+        int modifiedX = clickX + random.nextInt((int)clickBox.getBounds2D().getWidth());
+        int modifiedY = clickY + random.nextInt((int)clickBox.getBounds2D().getHeight());
+
+
+
+        return new Point(modifiedX,modifiedY);
+
+    }
+
+
 }

@@ -48,20 +48,14 @@ public class ClickObject {
         }
 
 
-        int clickX = 0;
-        int clickY = 0;
-
-        if(object.getClickbox() != null) {
-             clickX = (int) object.getClickbox().getBounds().getX();
-             clickY = (int) object.getClickbox().getBounds().getY();
-        }
+        Point clickPoint = DoAction.getClickPoint(object);
 
 
         if (object instanceof GameObject) {
             GameObject g = (GameObject) object;
-            DoAction.action(g.getSceneMinLocation().getX(), g.getSceneMinLocation().getY(), MenuAction.of(2 + num), g.getId(), -1, "", clickX, clickY);
+            DoAction.action(g.getSceneMinLocation().getX(), g.getSceneMinLocation().getY(), MenuAction.of(2 + num), g.getId(), -1, "", clickPoint.getX(), clickPoint.getY());
         }else {
-            DoAction.action(object.getLocalLocation().getSceneX(), object.getLocalLocation().getSceneY(), MenuAction.of(2+num), object.getId(), -1, "", clickX,clickY);
+            DoAction.action(object.getLocalLocation().getSceneX(), object.getLocalLocation().getSceneY(), MenuAction.of(2+num), object.getId(), -1, "", clickPoint.getX(),clickPoint.getY());
         }
 
     }
