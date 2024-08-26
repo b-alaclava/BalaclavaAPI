@@ -52,7 +52,7 @@ public class BQuickPrayerFlickerPlugin extends Plugin {
             endPlugin();
         }
 
-        if(EthanApi.isQuickPrayerEnabled()){
+        if(PrayerUtility.isQuickPrayerEnabled()){
             PrayerUtility.toggleQuickPrayer();
         }
         PrayerUtility.toggleQuickPrayer();

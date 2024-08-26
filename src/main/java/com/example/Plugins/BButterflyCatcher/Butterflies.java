@@ -1,6 +1,5 @@
 package com.example.Plugins.BButterflyCatcher;
 
-import net.runelite.api.NPC;
 import net.runelite.api.NpcID;
 
 public enum Butterflies {

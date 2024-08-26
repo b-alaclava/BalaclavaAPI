@@ -44,7 +44,8 @@ public class Walk {
         int x = canv != null ? canv.getX() : 0;
         int y = canv != null ? canv.getY() : 0;
 
-        DoAction.action(x,
+        DoAction.action(
+                x,
                 y,
                 MenuAction.WALK,
                 0,

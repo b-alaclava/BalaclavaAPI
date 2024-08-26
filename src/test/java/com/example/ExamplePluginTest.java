@@ -1,7 +1,7 @@
 package com.example;
 
 import com.example.BalaclavaAPI.TestPlugin.TestPlugin;
-import com.example.Plugins.BButterflyCatcher.BButterflyCatcher;
+import com.example.Plugins.BButterflyCatcher.BButterflyCatcherPlugin;
 import com.example.Plugins.BCooker.BCookerPlugin;
 import com.example.Plugins.BHighAlch.BHighAlchPlugin;
 import com.example.Plugins.BQuickPrayerFlicker.BQuickPrayerFlickerPlugin;
@@ -16,7 +16,7 @@ public class ExamplePluginTest {
                 TestPlugin.class,
                 AutoTitheFarmPlugin.class,
                 BCookerPlugin.class,
-                BButterflyCatcher.class,
+                BButterflyCatcherPlugin.class,
                 BHighAlchPlugin.class,
                 BQuickPrayerFlickerPlugin.class,
                 BSuperheatPlugin.class);

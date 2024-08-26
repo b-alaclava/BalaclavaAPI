@@ -1,7 +1,13 @@
 package com.example.EthanApi.PathFinding;
 
 import com.example.EthanApi.EthanApi;
+import net.runelite.api.ObjectComposition;
+import net.runelite.api.Tile;
+import net.runelite.api.WallObject;
+import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
+import net.runelite.client.RuneLite;
+import net.runelite.client.callback.ClientThread;
 import org.roaringbitmap.RoaringBitmap;
 
 import java.io.IOException;
@@ -101,4 +107,7 @@ public class GlobalCollisionMap {
         }
         return null;
     }
+
+
+
 }

@@ -12,6 +12,7 @@ import net.runelite.api.*;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.RuneLite;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.client.eventbus.EventBus;
 import net.runelite.client.game.ItemManager;
 import net.runelite.client.plugins.Plugin;
@@ -116,11 +117,12 @@ public class EthanApi {
 
     public static List<WorldPoint> reachableTiles() {
         boolean[][] visited = new boolean[104][104];
-        int[][] flags = client.getCollisionMaps()[client.getPlane()].getFlags();
+        int[][] flags = client.getTopLevelWorldView().getCollisionMaps()[client.getTopLevelWorldView().getPlane()].getFlags();
         WorldPoint playerLoc = client.getLocalPlayer().getWorldLocation();
-        int firstPoint = (playerLoc.getX()-client.getBaseX() << 16) | playerLoc.getY()-client.getBaseY();
+        int firstPoint = (playerLoc.getX()-client.getTopLevelWorldView().getBaseX() << 16) | playerLoc.getY()-client.getTopLevelWorldView().getBaseY();
         ArrayDeque<Integer> queue = new ArrayDeque<>();
         queue.add(firstPoint);
+
         while (!queue.isEmpty()) {
             int point = queue.poll();
             short x =(short)(point >> 16);
@@ -128,6 +130,10 @@ public class EthanApi {
             if (y < 0 || x < 0 || y > 104 || x > 104) {
                 continue;
             }
+
+            // Get the current WorldPoint
+
+
             if ((flags[x][y] & CollisionDataFlag.BLOCK_MOVEMENT_SOUTH) == 0 && (flags[x][y - 1] & CollisionDataFlag.BLOCK_MOVEMENT_FULL) == 0 && !visited[x][y - 1]) {
                 queue.add((x << 16) | (y - 1));
                 visited[x][y - 1] = true;
@@ -145,9 +151,9 @@ public class EthanApi {
                 visited[x + 1][y] = true;
             }
         }
-        int baseX = client.getBaseX();
-        int baseY = client.getBaseY();
-        int plane = client.getPlane();
+        int baseX = client.getTopLevelWorldView().getBaseX();
+        int baseY = client.getTopLevelWorldView().getBaseY();
+        int plane = client.getTopLevelWorldView().getPlane();
         List<WorldPoint> finalPoints = new ArrayList<>();
         for (int x = 0; x < 104; ++x) {
             for (int y = 0; y < 104; ++y) {
@@ -333,6 +339,175 @@ public class EthanApi {
         }
         return new PathResult(isReachable, currentDistance);
     }
+
+    public static PathResult canPathToTile(WorldPoint startTile, WorldPoint destinationTile) {
+        int z = client.getPlane();
+        if (z != destinationTile.getPlane()) {
+            return new PathResult(false, Integer.MAX_VALUE);
+        }
+
+        CollisionData[] collisionData = client.getCollisionMaps();
+        if (collisionData == null) {
+            return new PathResult(false, Integer.MAX_VALUE);
+        }
+
+        int[][] directions = new int[128][128];
+        int[][] distances = new int[128][128];
+        int[] bufferX = new int[4096];
+        int[] bufferY = new int[4096];
+
+        // Initialise directions and distances
+        for (int i = 0; i < 128; ++i) {
+            for (int j = 0; j < 128; ++j) {
+                directions[i][j] = 0;
+                distances[i][j] = Integer.MAX_VALUE;
+            }
+        }
+
+        LocalPoint starter = LocalPoint.fromWorld(client, startTile);
+        if(starter == null){
+            return new PathResult(false, Integer.MAX_VALUE);
+        }
+
+        int pSX = starter.getSceneX();
+        int pSY = starter.getSceneY();
+
+        Point p1 = client.getScene().getTiles()[client.getPlane()][pSX][pSY].getSceneLocation();
+        LocalPoint lp = LocalPoint.fromWorld(client, destinationTile);
+        if (lp == null || !lp.isInScene()) {
+            return new PathResult(false, Integer.MAX_VALUE);
+        }
+        Point p2 = new Point(lp.getSceneX(), lp.getSceneY());
+
+        int middleX = p1.getX();
+        int middleY = p1.getY();
+        int currentX = middleX;
+        int currentY = middleY;
+        int offsetX = 64;
+        int offsetY = 64;
+        // Initialise directions and distances for starting tile
+        directions[offsetX][offsetY] = 99;
+        distances[offsetX][offsetY] = 0;
+        int index1 = 0;
+        bufferX[0] = currentX;
+        int index2 = 1;
+        bufferY[0] = currentY;
+        int[][] collisionDataFlags = collisionData[z].getFlags();
+
+        int currentDistance = Integer.MAX_VALUE;
+        boolean isReachable = false;
+
+        while (index1 != index2) {
+            currentX = bufferX[index1];
+            currentY = bufferY[index1];
+            index1 = index1 + 1 & 4095;
+            // currentX is for the local coordinate while currentMapX is for the index in the directions and distances arrays
+            int currentMapX = currentX - middleX + offsetX;
+            int currentMapY = currentY - middleY + offsetY;
+            if ((currentX == p2.getX()) && (currentY == p2.getY())) {
+                isReachable = true;
+                break;
+            }
+
+            currentDistance = distances[currentMapX][currentMapY] + 1;
+            if (currentMapX > 0 && directions[currentMapX - 1][currentMapY] == 0 && (collisionDataFlags[currentX - 1][currentY] & 19136776) == 0) {
+                // Able to move 1 tile west
+                bufferX[index2] = currentX - 1;
+                bufferY[index2] = currentY;
+                index2 = index2 + 1 & 4095;
+                directions[currentMapX - 1][currentMapY] = 2;
+                distances[currentMapX - 1][currentMapY] = currentDistance;
+            }
+
+            if (currentMapX < 127 && directions[currentMapX + 1][currentMapY] == 0 && (collisionDataFlags[currentX + 1][currentY] & 19136896) == 0) {
+                // Able to move 1 tile east
+                bufferX[index2] = currentX + 1;
+                bufferY[index2] = currentY;
+                index2 = index2 + 1 & 4095;
+                directions[currentMapX + 1][currentMapY] = 8;
+                distances[currentMapX + 1][currentMapY] = currentDistance;
+            }
+
+            if (currentMapY > 0 && directions[currentMapX][currentMapY - 1] == 0 && (collisionDataFlags[currentX][currentY - 1] & 19136770) == 0) {
+                // Able to move 1 tile south
+                bufferX[index2] = currentX;
+                bufferY[index2] = currentY - 1;
+                index2 = index2 + 1 & 4095;
+                directions[currentMapX][currentMapY - 1] = 1;
+                distances[currentMapX][currentMapY - 1] = currentDistance;
+            }
+
+            if (currentMapY < 127 && directions[currentMapX][currentMapY + 1] == 0 && (collisionDataFlags[currentX][currentY + 1] & 19136800) == 0) {
+                // Able to move 1 tile north
+                bufferX[index2] = currentX;
+                bufferY[index2] = currentY + 1;
+                index2 = index2 + 1 & 4095;
+                directions[currentMapX][currentMapY + 1] = 4;
+                distances[currentMapX][currentMapY + 1] = currentDistance;
+            }
+
+            if (currentMapX > 0 && currentMapY > 0 && directions[currentMapX - 1][currentMapY - 1] == 0 && (collisionDataFlags[currentX - 1][currentY - 1] & 19136782) == 0 && (collisionDataFlags[currentX - 1][currentY] & 19136776) == 0 && (collisionDataFlags[currentX][currentY - 1] & 19136770) == 0) {
+                // Able to move 1 tile south-west
+                bufferX[index2] = currentX - 1;
+                bufferY[index2] = currentY - 1;
+                index2 = index2 + 1 & 4095;
+                directions[currentMapX - 1][currentMapY - 1] = 3;
+                distances[currentMapX - 1][currentMapY - 1] = currentDistance;
+            }
+
+            if (currentMapX < 127 && currentMapY > 0 && directions[currentMapX + 1][currentMapY - 1] == 0 && (collisionDataFlags[currentX + 1][currentY - 1] & 19136899) == 0 && (collisionDataFlags[currentX + 1][currentY] & 19136896) == 0 && (collisionDataFlags[currentX][currentY - 1] & 19136770) == 0) {
+                // Able to move 1 tile north-west
+                bufferX[index2] = currentX + 1;
+                bufferY[index2] = currentY - 1;
+                index2 = index2 + 1 & 4095;
+                directions[currentMapX + 1][currentMapY - 1] = 9;
+                distances[currentMapX + 1][currentMapY - 1] = currentDistance;
+            }
+
+            if (currentMapX > 0 && currentMapY < 127 && directions[currentMapX - 1][currentMapY + 1] == 0 && (collisionDataFlags[currentX - 1][currentY + 1] & 19136824) == 0 && (collisionDataFlags[currentX - 1][currentY] & 19136776) == 0 && (collisionDataFlags[currentX][currentY + 1] & 19136800) == 0) {
+                // Able to move 1 tile south-east
+                bufferX[index2] = currentX - 1;
+                bufferY[index2] = currentY + 1;
+                index2 = index2 + 1 & 4095;
+                directions[currentMapX - 1][currentMapY + 1] = 6;
+                distances[currentMapX - 1][currentMapY + 1] = currentDistance;
+            }
+
+            if (currentMapX < 127 && currentMapY < 127 && directions[currentMapX + 1][currentMapY + 1] == 0 && (collisionDataFlags[currentX + 1][currentY + 1] & 19136992) == 0 && (collisionDataFlags[currentX + 1][currentY] & 19136896) == 0 && (collisionDataFlags[currentX][currentY + 1] & 19136800) == 0) {
+                // Able to move 1 tile north-east
+                bufferX[index2] = currentX + 1;
+                bufferY[index2] = currentY + 1;
+                index2 = index2 + 1 & 4095;
+                directions[currentMapX + 1][currentMapY + 1] = 12;
+                distances[currentMapX + 1][currentMapY + 1] = currentDistance;
+            }
+        }
+        return new PathResult(isReachable, currentDistance);
+    }
+
+
+    public static boolean canPathToArea(WorldPoint startPoint, List<WorldPoint> destinationTiles) {
+        for(WorldPoint worldPoint : destinationTiles){
+            if(canPathToTile(startPoint,worldPoint).isReachable()){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static boolean canPathToArea(List<WorldPoint> startArea, List<WorldPoint> destinationTiles) {
+        for(WorldPoint worldPoint2 :startArea){
+            for(WorldPoint worldPoint : destinationTiles) {
+                if (canPathToTile(worldPoint2, worldPoint).isReachable()) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
 
     public static class PathResult {
         private final boolean reachable;
@@ -619,7 +794,6 @@ public class EthanApi {
         return null;
     }
 
-
     static boolean nwObstructed(WorldPoint starting, HashSet<WorldPoint> impassible, HashSet<WorldPoint> walkable) {
         if (impassible.contains(starting.dx(-1).dy(0)) || !walkable.contains(starting.dx(-1).dy(0))) {
             return true;
@@ -813,6 +987,9 @@ public class EthanApi {
         }
         return impassible.contains(starting.dx(1).dy(-1)) || !walkable.contains(starting.dx(1).dy(-1));
     }
+
+
+
 
 
 }

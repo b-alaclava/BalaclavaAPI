@@ -35,10 +35,7 @@ public class ClickWidget {
             return;
         }
 
-
-
         Point clickPoint = DoAction.getClickPoint(widget);
-
         DoAction.action(widget.getIndex(),widget.getId(), MenuAction.CC_OP,num,widget.getItemId(),widget.getName(), clickPoint.getX(), clickPoint.getY());
 
 
@@ -78,10 +75,8 @@ public class ClickWidget {
         }
 
         Point srcClickPoint = DoAction.getClickPoint(srcWidget);
-        Point targetClickPoint = DoAction.getClickPoint(targetWidget);
-
-
         DoAction.action(srcWidget.getIndex(),srcWidget.getId(), MenuAction.WIDGET_TARGET,srcWidget.getId(),srcWidget.getItemId(),srcWidget.getName(), srcClickPoint.getX(), srcClickPoint.getY());
+        Point targetClickPoint = DoAction.getClickPoint(targetWidget);
         DoAction.action(targetWidget.getIndex(),targetWidget.getId(), MenuAction.WIDGET_TARGET_ON_WIDGET,targetWidget.getId(),targetWidget.getItemId(),targetWidget.getName(), targetClickPoint.getX(), targetClickPoint.getY());
 
 
@@ -97,19 +92,13 @@ public class ClickWidget {
         ClickWidget.clickWidget(widget.getIndex(),widget,MenuAction.WIDGET_TARGET,0);
 
 
-        int clickX = 0;
-        int clickY = 0;
-
-        if(obj.getCanvasTilePoly().getBounds() != null) {
-            clickX = (int) (int)obj.getCanvasTilePoly().getBounds().getMinX();
-            clickY = (int) (int)obj.getCanvasTilePoly().getBounds().getMinY();
-        }
+        Point clickPoint = DoAction.getClickPoint(obj);
 
         if (obj instanceof GameObject) {
             GameObject g = (GameObject) obj;
-            DoAction.action(g.getSceneMinLocation().getX(), g.getSceneMinLocation().getY(), MenuAction.WIDGET_TARGET_ON_GAME_OBJECT, g.getId(), -1, "", clickX, clickY);
+            DoAction.action(g.getSceneMinLocation().getX(), g.getSceneMinLocation().getY(), MenuAction.WIDGET_TARGET_ON_GAME_OBJECT, g.getId(), -1, "", clickPoint.getX(), clickPoint.getY());
         }else {
-            DoAction.action(obj.getLocalLocation().getSceneX(), obj.getLocalLocation().getSceneY(), MenuAction.WIDGET_TARGET_ON_GAME_OBJECT, obj.getId(), -1, "", clickX,clickY);
+            DoAction.action(obj.getLocalLocation().getSceneX(), obj.getLocalLocation().getSceneY(), MenuAction.WIDGET_TARGET_ON_GAME_OBJECT, obj.getId(), -1, "", clickPoint.getX(), clickPoint.getY());
         }
 
     }
